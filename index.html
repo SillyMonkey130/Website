@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Basics</title>
+</head>
+<body>
+
+  <header class="site">
+    <strong>&lt;html-basics&gt;</strong>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#what">What it is</a></li>
+        <li><a href="#skeleton">Page skeleton</a></li>
+        <li><a href="#text">Text</a></li>
+        <li><a href="#links">Links and images</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#practice">Try it</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Learn the building blocks of every web page.</h1>
+    <p class="lead">HTML describes what is on a page: headings, paragraphs, links, images. Five short lessons, each with code you can copy and the result beside it.</p>
+
+    <div class="anatomy" role="img" aria-label="Diagram of an HTML element: opening tag with a class attribute, content, and closing tag">
+<pre><span class="part" data-label="opening tag"><span class="t">&lt;p</span> <span class="a">class</span>=<span class="v">"intro"</span><span class="t">&gt;</span></span><span class="part" data-label="content">Hello, web!</span><span class="part" data-label="closing tag"><span class="t">&lt;/p&gt;</span></span></pre>
+      <p class="note">One element = an opening tag (which can carry attributes), the content, and a closing tag.</p>
+    </div>
+  </div>
+
+  <main>
+
+    <section id="what">
+      <h2>What HTML is</h2>
+      <p><mark>HTML</mark> stands for HyperText Markup Language. It is not a programming language: it does not calculate or make decisions. It labels content so the browser knows what each piece is.</p>
+      <p>Browsers read the labels and draw the page. CSS then controls how it looks, and JavaScript adds behavior. HTML comes first because everything else builds on it.</p>
+    </section>
+
+    <section id="skeleton">
+      <h2>Every page has the same skeleton</h2>
+      <p>Save this in a file called <code>index.html</code> and open it in your browser. Only what is inside <code>&lt;body&gt;</code> appears on the page.</p>
+      <div class="demo">
+        <div class="code"><span class="label">index.html</span><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My first page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></div>
+        <div class="result">
+          <span class="label">What each part does</span>
+          <p><code>&lt;!DOCTYPE html&gt;</code> tells the browser this is modern HTML.</p>
+          <p><code>&lt;head&gt;</code> holds information about the page, such as its title in the browser tab.</p>
+          <p><code>&lt;body&gt;</code> holds everything visitors see.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="text">
+      <h2>Headings and paragraphs</h2>
+      <p>Use <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> for headings, from most to least important, and <code>&lt;p&gt;</code> for paragraphs. Use one <code>&lt;h1&gt;</code> per page.</p>
+      <div class="demo">
+        <div class="code"><span class="label">HTML</span><pre>&lt;h1&gt;Bread&lt;/h1&gt;
+&lt;h3&gt;Ingredients&lt;/h3&gt;
+&lt;p&gt;You need &lt;strong&gt;flour&lt;/strong&gt;,
+water, and &lt;em&gt;patience&lt;/em&gt;.&lt;/p&gt;</pre></div>
+        <div class="result">
+          <span class="label">Result</span>
+          <h1>Bread</h1>
+          <h3>Ingredients</h3>
+          <p>You need <strong>flour</strong>, water, and <em>patience</em>.</p>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>Tag</th><th>Use it for</th></tr></thead>
+        <tbody>
+          <tr><td>&lt;strong&gt;</td><td>Important text (shown bold)</td></tr>
+          <tr><td>&lt;em&gt;</td><td>Emphasis (shown italic)</td></tr>
+          <tr><td>&lt;br&gt;</td><td>A line break. It has no closing tag.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="links">
+      <h2>Links and images</h2>
+      <p>Both use <mark>attributes</mark>: extra settings written inside the opening tag as <code>name="value"</code>. A link needs <code>href</code>. An image needs <code>src</code> and <code>alt</code>, the text read aloud by screen readers and shown if the image fails to load.</p>
+      <div class="demo">
+        <div class="code"><span class="label">HTML</span><pre>&lt;a href="https://developer.mozilla.org"&gt;
+  Read the MDN docs
+&lt;/a&gt;
+
+&lt;img src="cat.jpg"
+     alt="A grey cat asleep on a sofa"&gt;</pre></div>
+        <div class="result">
+          <span class="label">Result</span>
+          <p><a href="https://developer.mozilla.org">Read the MDN docs</a></p>
+          <p>The image tag would show <code>cat.jpg</code> here, or its alt text if the file is missing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="lists">
+      <h2>Lists</h2>
+      <p>Use <code>&lt;ul&gt;</code> when order does not matter and <code>&lt;ol&gt;</code> when it does. Each item goes in an <code>&lt;li&gt;</code>.</p>
+      <div class="demo">
+        <div class="code"><span class="label">HTML</span><pre>&lt;ul&gt;
+  &lt;li&gt;Flour&lt;/li&gt;
+  &lt;li&gt;Water&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mix&lt;/li&gt;
+  &lt;li&gt;Rest&lt;/li&gt;
+  &lt;li&gt;Bake&lt;/li&gt;
+&lt;/ol&gt;</pre></div>
+        <div class="result">
+          <span class="label">Result</span>
+          <ul><li>Flour</li><li>Water</li></ul>
+          <ol><li>Mix</li><li>Rest</li><li>Bake</li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="practice">
+      <h2>Try it yourself</h2>
+      <p>Make a page about something you like. Open each question for a hint.</p>
+      <details>
+        <summary>Which tag makes the main title?</summary>
+        <p>Use <code>&lt;h1&gt;</code>, once, inside <code>&lt;body&gt;</code>.</p>
+      </details>
+      <details>
+        <summary>How do I link to another page?</summary>
+        <p>Wrap the words in <code>&lt;a href="page.html"&gt;</code> and close it with <code>&lt;/a&gt;</code>.</p>
+      </details>
+      <details>
+        <summary>Nothing changed when I edited the file.</summary>
+        <p>Save the file, then refresh the browser tab. Also check that every opening tag has a closing tag.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer>Next step: learn CSS to style what you have built.</footer>
+
+</body>
+</html>
 
